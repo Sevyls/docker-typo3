@@ -1,0 +1,13 @@
+web:
+  build: .
+  links:
+    - db
+  ports:
+    - "80:80"
+db:
+  image: mysql:5.5
+  environment:
+    - MYSQL_ROOT_PASSWORD=changeme
+    - MYSQL_DATABASE=typo3
+    - MYSQL_USER=typo3
+    - MYSQL_PASSWORD=typo3_changemetoo
