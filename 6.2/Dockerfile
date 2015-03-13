@@ -4,7 +4,7 @@ FROM php:5.5-apache
 
 ENV TYPO3_VERSION 6.2.10
 
-# Download TYPO3
+# Download requirements
 RUN apt-get update -qq && \
     apt-get install -qq -y --no-install-recommends \
         wget \
