@@ -4,10 +4,17 @@ web:
     - db
   ports:
     - "80:80"
+  volumes:
+    - ./typo3conf:/var/www/html/typo3conf/
+    - ./fileadmin:/var/www/html/fileadmin/
 db:
   image: mysql:5.5
+  ports:
+    - "3306:3306"
   environment:
     - MYSQL_ROOT_PASSWORD=changeme
     - MYSQL_DATABASE=typo3
     - MYSQL_USER=typo3
     - MYSQL_PASSWORD=typo3_changemetoo
+  volumes:
+    - ./mysql:/var/lib/mysql
